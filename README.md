@@ -9,10 +9,12 @@ pip install thaitaxrefund
 
 ## Usage
 ```python
+import thaitaxrefund
+
 thai_id = '1111111111111'
 thai_name = 'บิ๊ก'
 thai_surname = 'ตู่'
-result = thaitaxrefund.check(thai_id, thai_name, thai_surname)
+result = thaitaxrefund.check(thai_id, thai_name, thai_surname, thai_year=2562)
 ```
 
 ### Example result
