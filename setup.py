@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='thaitaxrefund',
-    version='0.1',
+    version='0.2',
     author="Kittinan Srithaworn",
     description="Thai tax refund checker",
     long_description=long_description,
