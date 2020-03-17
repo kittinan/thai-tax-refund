@@ -5,6 +5,9 @@ https://www.rd.go.th/publish/27942.0.html
 
 
 ## Installation
+
+available on pip https://pypi.org/project/thaitaxrefund/
+
 ```bash
 pip install thaitaxrefund
 ```
