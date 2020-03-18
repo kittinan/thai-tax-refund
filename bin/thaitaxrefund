@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+
+"""thaitaxfund.
+
+Usage:
+  thaitaxfund THAI_ID THAI_FIRSTNAME THAI_LASTNAME [--year=<THAI_YEAR> --json]
+  thaitaxfund (-h | --help)
+  thaitaxfund --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+  --year=<THAI_YEAR>  thai year tax [default: 2562].
+  --json        Print full json response [default: False].
+
+"""
+
+from docopt import docopt
+import thaitaxrefund
+import json
+
+if __name__ == '__main__':
+    arguments = docopt(
+        __doc__, version='thaitaxfund {}'.format(thaitaxrefund.VERSION))
+
+    thai_id = arguments.get('THAI_ID')
+    thai_name = arguments.get('THAI_FIRSTNAME')
+    thai_surname = arguments.get('THAI_LASTNAME')
+    year = arguments.get('--year')
+    is_show_json = arguments.get('--json')
+
+    result = thaitaxrefund.check(
+        thai_id, thai_name, thai_surname, thai_year=year)
+
+    # TODO: should raise error
+    if not result:
+        print("ไม่พบข้อมูล")
+
+    if is_show_json:
+        print(json.dumps(result, indent=4, sort_keys=True, ensure_ascii=False))
+    else:
+        print(result['process_text'])

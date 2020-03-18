@@ -1,7 +1,8 @@
 import requests
-import urllib3
+requests.packages.urllib3.disable_warnings()
 
-urllib3.disable_warnings()
+VERSION = '0.4.3'
+
 
 def check(thai_id, thai_name, thai_surname, thai_year=2562):
 
@@ -44,5 +45,5 @@ def check(thai_id, thai_name, thai_surname, thai_year=2562):
     }
 
     raw_data['process_text'] = process_dict.get(raw_data['processPicName'], '')
-    
+
     return raw_data
