@@ -13,6 +13,19 @@ pip install thaitaxrefund
 ```
 
 ## Usage
+
+Command line usage
+
+```
+thaitaxfund THAI_ID THAI_FIRSTNAME THAI_LASTNAME [--year=<THAI_YEAR> --json]
+```
+
+command line example
+
+```bash
+thaitaxrefund 1111111111111 บิ๊ก ตู่
+```
+
 ```python
 import thaitaxrefund
 
