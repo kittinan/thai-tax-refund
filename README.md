@@ -17,7 +17,7 @@ pip install thaitaxrefund
 Command line usage
 
 ```
-thaitaxfund THAI_ID THAI_FIRSTNAME THAI_LASTNAME [--year=<THAI_YEAR> --json]
+thaitaxrefund THAI_ID THAI_FIRSTNAME THAI_LASTNAME [--year=<THAI_YEAR> --json]
 ```
 
 command line example
