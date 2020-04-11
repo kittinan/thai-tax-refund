@@ -2,7 +2,7 @@ import requests
 
 requests.packages.urllib3.disable_warnings()
 
-VERSION = "0.4.4"
+VERSION = "0.4.5"
 
 
 def check(thai_id, thai_name, thai_surname, thai_year=2562):
@@ -44,7 +44,14 @@ def check(thai_id, thai_name, thai_surname, thai_year=2562):
     raw_data["process_text"] = process_dict.get(raw_data["processPicName"], "")
 
     # Rquire document
-    if raw_data["processPicName"] == "process_3" and raw_data.get("reqDoc"):
+    if (
+        raw_data["processPicName"] == "process_3"
+        and raw_data.get("reqDoc")
+        and raw_data.get("uploadDoc")
+    ):
+        raw_data["process_text"] = "ได้รับเอกสารของท่านแล้ว อยู่ระหว่างการตรวจสอบความถูกต้อง"
+
+    elif raw_data["processPicName"] == "process_3" and raw_data.get("reqDoc"):
         raw_data["process_text"] = "ขอให้ท่านส่งเอกสาร"
 
     return raw_data
